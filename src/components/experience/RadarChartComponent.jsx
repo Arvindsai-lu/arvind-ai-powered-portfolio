@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react'; // ✅ FIX: Add useState import
 import { Radar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,

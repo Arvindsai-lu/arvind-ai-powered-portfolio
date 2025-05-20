@@ -1,21 +1,20 @@
-import React from 'react'
-import './nav.css'
-import { BiHomeHeart } from 'react-icons/bi'
-import { BiUser } from 'react-icons/bi'
-import { BiBookBookmark } from 'react-icons/bi'
-import { HiDocumentDuplicate } from 'react-icons/hi'
-import { BiMessageSquareDetail } from 'react-icons/bi'
-import { useState } from 'react'
+import React, { useState } from 'react';
+import './nav.css';
+import { BiHomeHeart } from 'react-icons/bi';
+import { BiUser } from 'react-icons/bi';
+import { BiBookBookmark } from 'react-icons/bi';
+import { HiDocumentDuplicate } from 'react-icons/hi';
+import { BiMessageSquareDetail } from 'react-icons/bi';
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState('#hero') // Updated default section
+  const [activeNav, setActiveNav] = useState('#home'); // ✅ corrected default to #home
 
   return (
     <nav>
       <a
-        href="#hero"
-        onClick={() => setActiveNav('#hero')}
-        className={activeNav === '#hero' ? 'active' : ''}
+        href="#home"
+        onClick={() => setActiveNav('#home')}
+        className={activeNav === '#home' ? 'active' : ''}
       >
         <BiHomeHeart />
       </a>
@@ -48,7 +47,7 @@ const Nav = () => {
         <BiMessageSquareDetail />
       </a>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

@@ -1,0 +1,144 @@
+/* ================================
+   Hero Section Styling
+================================== */
+.hero-container {
+  position: relative; /* ✅ Needed for scroll & matrix layers */
+  text-align: center;
+  padding: 2.5rem 2rem 2rem;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  overflow: hidden; /* ✅ Keep matrix background contained */
+}
+
+/* ================================
+   Text Highlights
+================================== */
+.highlight {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* ================================
+   Tagline Styling
+================================== */
+.tagline {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--color-light);
+  font-style: italic;
+}
+
+/* ================================
+   Buttons Group
+================================== */
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   Image Styling (Optional)
+================================== */
+.hero-img {
+  margin-top: 3rem;
+  width: 20rem;
+  height: 28rem;
+  background: linear-gradient(var(--color-light), transparent);
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+/* ================================
+   Social Icons (Left Bottom)
+================================== */
+.header__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  z-index: 2;
+}
+
+.header__socials::after {
+  content: '';
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+/* ================================
+   Scroll Down Link (Right Bottom)
+================================== */
+.scroll__down {
+  position: absolute;
+  right: -2rem;
+  bottom: 2rem;
+  transform: rotate(90deg);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-light);
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.scroll__down:hover {
+  color: var(--color-primary);
+}
+
+/* ================================
+   Responsive Adjustments
+================================== */
+@media screen and (max-width: 768px) {
+  .hero-img {
+    width: 16rem;
+    height: 22rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-container {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .scroll__down,
+  .header__socials {
+    display: none;
+  }
+}
+
+/* Glitch effect for name in Hacker Mode */
+body.hacker .highlight {
+  position: relative;
+  color: #00ff88;
+  text-shadow: 0 0 2px #00ff88, 0 0 5px #00ff88;
+  animation: glitch 0.9s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-2px, -1px); }
+  60% { transform: translate(1px, 2px); }
+  80% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0); }
+}

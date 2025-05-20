@@ -1,0 +1,219 @@
+import React from 'react';
+import './experience.css';
+import { BsPatchCheckFill } from 'react-icons/bs';
+import RadarChartComponent from './RadarChartComponent'; // adjust path if needed
+
+const Experience = () => {
+  return (
+    <section id="experience">
+      {/* === SKILLS MATRIX === */}
+      <div style={{ marginBottom: '3rem', paddingBottom: '1.5rem' }}>
+        <section id="skills-matrix">
+          <h5>My Technical Skills</h5>
+          <h2>Skills Matrix</h2>
+          <RadarChartComponent />
+        </section>
+      </div>
+
+      {/* === TECHNICAL SKILL CARDS === */}
+      <div className="container experience__container">
+        {/* === LANGUAGES === */}
+        <div className="experience__frontend">
+          <h3>Languages</h3>
+          <div className="experience__content">
+            {[
+              { skill: 'Python', level: 'Intermediate' },
+              { skill: 'SQL', level: 'Intermediate' },
+              { skill: 'JavaScript', level: 'Basic' },
+              { skill: 'C', level: 'Basic' },
+              { skill: 'Node.js/React', level: 'Basic' },
+              { skill: 'HTML/CSS', level: 'Intermediate' },
+              { skill: 'Shell Scripting', level: 'Intermediate' },
+              { skill: 'Bash', level: 'Intermediate' },
+            ].map(({ skill, level }) => (
+              <article className="experience__details" key={skill}>
+                <BsPatchCheckFill className="experience__details-icon" />
+                <div>
+                  <h4>{skill}</h4>
+                  <small className="text-light">{level}</small>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* === CYBERSECURITY TOOLS === */}
+        <div className="experience__backend">
+          <h3>Cybersecurity Tools & Platforms</h3>
+          <div className="experience__content">
+            {[
+              { skill: 'Splunk', level: 'Intermediate' },
+              { skill: 'Wireshark', level: 'Experienced' },
+              { skill: 'Nmap', level: 'Experienced' },
+              { skill: 'Metasploit', level: 'Intermediate' },
+              { skill: 'Burp Suite', level: 'Intermediate' },
+              { skill: 'Docker', level: 'Basic' },
+              { skill: 'SIEM', level: 'Intermediate' },
+              { skill: 'AWS/GCP', level: 'Intermediate' },
+              { skill: 'Git/Github', level: 'Intermediate' },
+              { skill: 'Jira', level: 'Intermediate' },
+            ].map(({ skill, level }) => (
+              <article className="experience__details" key={skill}>
+                <BsPatchCheckFill className="experience__details-icon" />
+                <div>
+                  <h4>{skill}</h4>
+                  <small className="text-light">{level}</small>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* === SECURITY SKILLS === */}
+        <div className="experience__frontend">
+          <h3>Security Skills</h3>
+          <div className="experience__content">
+            {[
+              { skill: 'Identity and Access Management (IAM)', level: 'Intermediate' },
+              { skill: 'Threat Detection & Incident Response', level: 'Intermediate' },
+              { skill: 'Penetration Testing & Vulnerability Assessment', level: 'Intermediate' },
+              { skill: 'Network Security & Forensics', level: 'Intermediate' },
+              { skill: 'Scanning & Reconnaissance', level: 'Intermediate' },
+              { skill: 'Risk Management ', level: 'Intermediate' },
+              { skill: 'Offensive Security', level: 'Intermediate' },
+              { skill: 'Open Source Intelligence', level: 'Intermediate' },
+              { skill: 'Incident Response', level: 'Intermediate' },
+            ].map(({ skill, level }) => (
+              <article className="experience__details" key={skill}>
+                <BsPatchCheckFill className="experience__details-icon" />
+                <div>
+                  <h4>{skill}</h4>
+                  <small className="text-light">{level}</small>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* === DEVELOPER SKILLS === */}
+        <div className="experience__backend">
+          <h3>Developer Skills</h3>
+          <div className="experience__content">
+            {[
+              { skill: 'React.js', level: 'Intermediate' },
+              { skill: 'Node.js', level: 'Basic' },
+              { skill: 'REST APIs', level: 'Intermediate' },
+              { skill: 'Firebase / Netlify', level: 'Basic' },
+              { skill: 'Responsive Design', level: 'Intermediate' },
+              { skill: 'Git Workflow', level: 'Intermediate' },
+              { skill: 'Agile / Scrum', level: 'Intermediate' },
+              { skill: 'LangChain / RAG', level: 'Intermediate' },
+              { skill: 'Voice Cloning (TTS)', level: 'Intermediate' },
+              { skill: 'TIBCO Spotfire', level: 'Intermediate' },
+              { skill: 'Google Cloud (GCP)', level: 'Intermediate' }
+            ].map(({ skill, level }) => (
+              <article className="experience__details" key={skill}>
+                <BsPatchCheckFill className="experience__details-icon" />
+                <div>
+                  <h4>{skill}</h4>
+                  <small className="text-light">{level}</small>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* === WORK EXPERIENCE SECTION === */}
+      <section id="work-experience" style={{ marginTop: '4rem' }}>
+        <h5>Where I've Worked</h5>
+        <h2>Work Experience</h2>
+
+        <div className="experience__container">
+          {[
+            {
+              title: ' Graduate Engineer Trainee (Cybersecurity Analyst) – Renault Nissan Technology & Business Centre',
+              date: 'Jul 2022 – Jun 2023',
+              points: [
+                'Monitored SIEM traffic using Splunk, QRadar & Suricata.',
+                'Analyzed SQL/MariaDB login activity; boosted threat detection.',
+                'Reduced vulnerabilities by 25% using CVE-based management.',
+                'Achieved ISO 27001/NIST compliance in cloud audits.'
+              ]
+            },
+            {
+              title: 'Cyber Security Intern – Excelerate',
+              date: 'May 2023 – Jul 2023',
+              points: [
+                'Investigated phishing and scanned networks with OpenVAS & Nmap.',
+                'Monitored logs in Splunk and Wireshark.',
+                'Automated incident reporting with Python.'
+              ]
+            },
+            {
+              title: 'Cybers security Analyst Intern – TCS Forage',
+              date: 'Jul 2024 – Aug 2024',
+              points: [
+                'Built Splunk dashboards simulating threat response.',
+                'Designed IAM plans for onboarding/offboarding.',
+                'Audited cryptographic protocols.'
+              ]
+            },
+            {
+              title: 'Cyber Forensics Intern – Gurugram Cyber Cell',
+              date: 'Jun 2021 – Jul 2021',
+              points: [
+                'Investigated cybercrime using Autopsy and Wireshark.',
+                'Automated log analysis with Python.',
+                'Reduced investigation turnaround by 15%.'
+              ]
+            },
+            {
+              title: 'Cybersecurity Engineer Intern – Virtual Testing Foundation',
+              date: 'Jan 2021 – May 2021',
+              points: [
+                'Collaborated on cloud feature development and bug fixes.',
+                'Performed vulnerability assessments and penetration testing.',
+                'Automated compliance auditing with Azure Functions.',
+                'Developed internal tools using C#/.NET.'
+              ]
+            },
+            {
+              title: 'Freelance Full Stack Developer',
+              date: 'Ongoing',
+              points: [
+                'Delivered 10+ websites and portfolios for happy clients.',
+                'Built full-stack apps with HTML, CSS, JS, React, Node.js.',
+                'Optimized interfaces for SEO and mobile devices.'
+              ]
+            },
+            {
+              title: 'Open Source Contributor – GSSoC (GirlScript)',
+              date: 'Mar 2021 – Jun 2021',
+              points: [
+                'Contributed to web dev and automation projects on GitHub.',
+                'Fixed bugs, implemented features, and reviewed PRs.',
+                'Strengthened skills in HTML, JS, React, Git, REST APIs.'
+              ]
+            }
+          ].map(({ title, date, points }, i) => (
+            <div className="experience__backend" key={i}>
+              <h3>{title}</h3>
+              <small>{date}</small>
+              <div className="experience__content">
+                {points.map((pt, idx) => (
+                  <article className="experience__details" key={idx}>
+                    <BsPatchCheckFill className="experience__details-icon" />
+                    <div>{pt}</div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </section>
+  );
+};
+
+export default Experience;

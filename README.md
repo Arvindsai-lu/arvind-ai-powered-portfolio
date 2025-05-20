@@ -6,7 +6,7 @@ Welcome! I'm **Arvind Sai Dooda**, a passionate and self-driven **Cybersecurity 
 
 🚀 **Live Site**: [https://arvind-sai-d.netlify.app](https://arvind-sai-d.netlify.app)
 
-![Preview](src/assets/preview.jpg "Portfolio Preview")
+![Preview](https://raw.githubusercontent.com/Arvindsai-lu/arvind-ai-powered-portfolio/main/src/assets/preview.png)
 
 ---
 

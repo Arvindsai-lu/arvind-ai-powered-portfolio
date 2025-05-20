@@ -29,26 +29,30 @@ const App = () => {
       <Footer />
 
       {/* 💬 Floating Chat Assistant */}
-      <a
-        href="https://chatgpt.com/g/g-682c09ae8ff48191913c618b30818727-arvind-resume-assistant"
-        target="_blank"
-        rel="noreferrer"
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          backgroundColor: '#4CAF50',
-          color: 'white',
-          padding: '12px 20px',
-          borderRadius: '30px',
-          boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
-          textDecoration: 'none',
-          fontWeight: 'bold',
-          zIndex: 1000
-        }}
-      >
-        💬 Chat Assistant
-      </a>
+<a
+  href="https://chatgpt.com/g/g-682c09ae8ff48191913c618b30818727-arvind-resume-assistant"
+  target="_blank"
+  rel="noreferrer"
+  style={{
+    position: 'fixed',
+    bottom: '20px',
+    right: '20px',
+    backgroundColor: '#4CAF50',
+    color: 'white',
+    padding: '12px 20px',
+    borderRadius: '30px',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    zIndex: 1000,
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    fontSize: '14px'
+  }}
+>
+  <span style={{ fontSize: '16px' }}>💬</span> AI Bot
+</a>
     </>
   );
 };

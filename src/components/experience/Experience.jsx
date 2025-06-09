@@ -132,13 +132,13 @@ const Experience = () => {
         <div className="experience__container">
           {[
             {
-              title: ' Graduate Engineer Trainee (Cybersecurity Analyst) – Renault Nissan Technology & Business Centre',
+              title: ' Software Engineer Intern – Renault Nissan Technology & Business Centre',
               date: 'Jul 2022 – Jun 2023',
               points: [
-                'Monitored SIEM traffic using Splunk, QRadar & Suricata.',
-                'Analyzed SQL/MariaDB login activity; boosted threat detection.',
-                'Reduced vulnerabilities by 25% using CVE-based management.',
-                'Achieved ISO 27001/NIST compliance in cloud audits.'
+                'Developed production-level features across 3 major projects using Python and JavaScript.',
+                'Monitored SIEM traffic with Splunk, QRadar, and Suricata; improved detection workflows.',
+                'Reduced vulnerabilities by 25% through CVE-based patching and OpenVAS scanning',
+                'Supported ISO 27001/NIST compliance during internal cloud security audits.'
               ]
             },
             {

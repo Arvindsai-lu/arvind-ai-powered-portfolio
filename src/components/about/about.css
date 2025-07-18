@@ -1,119 +1,74 @@
 .about__container {
-  display: grid;
-  grid-template-columns: 35% 50%;
-  gap: 15%;
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
 }
 
 .about__me {
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 2rem;
-  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-  display: grid;
-  place-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(45deg,
+            transparent,
+            var(--color-primary),
+            transparent);
+    display: grid;
+    place-items: center;
 }
 
 .about__me-image {
-  border-radius: 2rem;
-  overflow: hidden;
-  transform: rotate(9deg);
-  transition: var(--transition);
+    border-radius: 2rem;
+    overflow: hidden;
+    /** độ nghiên ảnh about*/
+    transform: rotate(9deg);
+    transition: var(--transition);
 }
 
 .about__me-image:hover {
-  transform: rotate(0);
-}
-
-.about__me-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+    transform: rotate(0);
 }
 
 .about__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .about__card {
-  background: var(--color-bg-variant);
-  border: 1px solid transparent;
-  border-radius: 1rem;
-  padding: 2rem;
-  text-align: center;
-  transition: var(--transition);
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
 }
 
 .about__card:hover {
-  background: transparent;
-  border-color: var(--color-primary--variant);
-  cursor: default;
+    background: transparent;
+    border-color: var(--color-primary--variant);
+    cursor: default;
 }
 
 .about__icon {
-  color: var(--color-primary);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 .about__card h5 {
-  font-size: 0.95rem;
+    font-size: 0.95rem;
 }
 
 .about__card small {
-  font-size: 0.7rem;
-  color: var(--color-light);
+    font-size: 0.7rem;
+    color: var(--color-light);
 }
 
 .about__content p {
-  margin: 2rem 0 2.6rem;
-  color: var(--color-light);
+    margin: 2rem 0 2.6rem;
+    color: var(--color-light);
 }
 
-/* ================== Media Queries (Tablet) ============== */
-@media screen and (max-width: 1024px) {
-  .about__container {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .about__me {
-    width: 50%;
-    margin: 2rem auto 4rem;
-  }
-
-  .about__content {
-    margin: 1rem 0 1.5rem;
-  }
-}
-
-/* ================== Media Queries (Mobile) ============== */
-@media screen and (max-width: 600px) {
-  .about__me {
-    width: 65%;
-    margin: 0 auto 3rem;
-  }
-
-  .about__me-image img {
-    width: 180px; /* ✅ Smaller image only for mobile */
-  }
-
-  .about__cards {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .about__content {
-    text-align: center;
-  }
-
-  .about__content p {
-    margin: 1.5rem 0;
-  }
-}
-
-/* === Education Section (if present) === */
 .education__section {
   margin-top: 3rem;
   text-align: center;
@@ -122,7 +77,7 @@
 .education__container {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
   margin-top: 1rem;
 }
@@ -132,16 +87,98 @@
   padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid var(--color-primary);
-  flex: 1 1 300px;     /* Flexible width with base of 300px */
-  max-width: 400px;    /* Prevent it from getting too wide */
-  box-sizing: border-box;
-  text-align: center;
+  min-width: 250px;
 }
 
-/* Optional: Responsive tweak for small devices */
+/* ================== Media Queries (Medium Devices) ==============*/
+@media screen and (max-width: 1024px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .about__me {
+        width: 50%;
+        margin: 2rem auto 4rem;
+    }
+
+    .about__content {
+        margin: 1rem 0 1.5rem;
+    }
+}
+
+/* ================== Media Queries (Small Devices) ==============*/
 @media screen and (max-width: 600px) {
-  .education__item {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+    /* Fix for mobile header overlap */
+    #about {
+        padding-top: 2rem; /* Add space at top of section */
+    }
+    
+    #about h5,
+    #about h2 {
+        margin-bottom: 2rem; /* More space below headers */
+        position: relative;
+        z-index: 10; /* Ensure headers stay above image */
+    }
+
+    .about__me {
+        width: 65%;
+        margin: 1rem auto 3rem; /* Reduced top margin */
+        position: relative;
+        z-index: 1; /* Lower z-index than headers */
+    }
+
+    .about__cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 2rem; /* Space above cards */
+    }
+
+    .about__content {
+        text-align: center;
+        position: relative;
+        z-index: 5;
+    }
+
+    .about__content p {
+        margin: 1.5rem 0;
+    }
+    
+    /* Ensure education section has proper spacing */
+    .education__section {
+        margin-top: 4rem;
+        padding-top: 1rem;
+    }
+}
+
+/* ================== Extra Small Devices Fix ==============*/
+@media screen and (max-width: 480px) {
+    #about {
+        padding-top: 3rem; /* Even more space on very small screens */
+    }
+    
+    #about h5 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    #about h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .about__me {
+        width: 70%;
+        margin: 0.5rem auto 2.5rem; /* Minimal top margin */
+    }
+
+    .about__cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .about__card {
+        padding: 1.5rem;
+    }
 }

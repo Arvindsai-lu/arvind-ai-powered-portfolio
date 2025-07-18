@@ -21,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="hero-container"> {/* Anchor for Home link */}
+    <section className="hero-container">
       {theme === 'hacker' && <MatrixBackground />}
 
       <h1>
@@ -51,9 +51,7 @@ const Hero = () => {
         />
       </div>
 
-      <p className="tagline">
-        Blending cybersecurity and AI to build secure, scalable, and intelligent solutions.
-      </p>
+      <p className="tagline">Blending cybersecurity and AI to build secure, scalable, and intelligent solutions.</p>
 
       <div className="hero-buttons">
         <a href="/cv.pdf" download="Arvind_Sai_Resume.pdf" className="btn btn-primary">

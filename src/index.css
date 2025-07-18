@@ -14,36 +14,16 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem; /* Account for fixed nav */
-}
-
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 }
 
 /* ===========================
    🎨 Theme Variables
 ============================= */
 :root {
-  --transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 400ms ease;
   --container-width-lg: 75%;
   --container-width-md: 86%;
   --container-width-sm: 90%;
-  
-  /* Improved color contrast for accessibility */
-  --focus-outline: 2px solid #0066cc;
-  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 body.modern {
@@ -52,8 +32,7 @@ body.modern {
   --color-primary: #A68F97;
   --color-primary-variant: rgba(166, 143, 151, 0.4);
   --color-white: #ffffff;
-  --color-light: rgba(255, 255, 255, 0.8); /* Improved contrast */
-  --color-text-medium: rgba(255, 255, 255, 0.9);
+  --color-light: rgba(255, 255, 255, 0.6);
 }
 
 body.hacker {
@@ -62,8 +41,7 @@ body.hacker {
   --color-primary: #00ff88;
   --color-primary-variant: rgba(0, 255, 136, 0.4);
   --color-white: #f8f8f8;
-  --color-light: rgba(255, 255, 255, 0.8); /* Improved contrast */
-  --color-text-medium: rgba(255, 255, 255, 0.9);
+  --color-light: rgba(255, 255, 255, 0.6);
 }
 
 /* ===== Base Layout ===== */
@@ -73,49 +51,23 @@ body {
   color: var(--color-white);
   line-height: 1.7;
   transition: background 0.3s ease, color 0.3s ease;
-  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .container {
   width: var(--container-width-lg);
   margin: 0 auto;
-  max-width: 1200px; /* Prevent content from getting too wide */
 }
 
-/* ===== Improved Typography Scale ===== */
 h1, h2, h3, h4, h5 {
   font-weight: 500;
-  line-height: 1.2;
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-}
-
-h2 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-h3 {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-}
-
-h4 {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-}
-
-h5 {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
-
-p {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  line-height: 1.6;
+  font-size: 2.5rem;
 }
 
 section {
   margin-top: 8rem;
-  padding: 0 1rem; /* Add horizontal padding */
 }
 
 section > h2,
@@ -132,48 +84,22 @@ section > h2 {
 /* Highlight text (used in Hero) */
 .highlight {
   color: var(--color-primary);
-  font-weight: bold;
 }
 
 .text-light {
   color: var(--color-light);
 }
 
-/* ===== Improved Links ===== */
 a {
   color: var(--color-primary);
   transition: var(--transition);
-  text-decoration: none;
 }
 
 a:hover {
   color: var(--color-white);
 }
 
-a:focus {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-
-/* ===== Skip Link for Accessibility ===== */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--color-primary);
-  color: var(--color-bg);
-  padding: 8px;
-  text-decoration: none;
-  border-radius: 4px;
-  z-index: 10000;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
-
-/* ===== Enhanced Buttons ===== */
+/* ===== Buttons ===== */
 .btn {
   width: max-content;
   display: inline-block;
@@ -183,42 +109,12 @@ a:focus {
   cursor: pointer;
   border: 1px solid var(--color-primary);
   transition: var(--transition);
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  min-height: 44px; /* Touch-friendly */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s;
-}
-
-.btn:hover::before {
-  left: 100%;
 }
 
 .btn:hover {
   background: var(--color-white);
   color: var(--color-bg);
   border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-.btn:active {
-  transform: translateY(0);
 }
 
 .btn-primary {
@@ -226,75 +122,16 @@ a:focus {
   color: var(--color-bg);
 }
 
-.btn-primary:hover {
-  background: var(--color-white);
-  color: var(--color-bg);
-}
-
-/* ===== Loading States ===== */
-.skeleton {
-  background: linear-gradient(90deg, var(--color-bg-variant) 25%, rgba(255,255,255,0.1) 50%, var(--color-bg-variant) 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-  border-radius: 4px;
-}
-
-@keyframes loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-.loading {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
 /* ===== Images ===== */
 img {
   display: block;
   width: 100%;
   object-fit: cover;
-  transition: var(--transition);
 }
 
-img.lazy-loading {
-  opacity: 0.5;
-}
-
-img.lazy-loaded {
-  opacity: 1;
-}
-
-/* ===== Error States ===== */
-.error-fallback {
-  text-align: center;
-  padding: 2rem;
-  background: var(--color-bg-variant);
-  border-radius: 1rem;
-  margin: 2rem 0;
-}
-
-.error-fallback h2 {
-  color: #ff6b6b;
-  margin-bottom: 1rem;
-}
-
-/* ===== Scrollbar Styling ===== */
+/* ===== Scrollbar (Hidden) ===== */
 ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-variant);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-white);
+  display: none;
 }
 
 /* ===== Responsive Breakpoints ===== */
@@ -305,28 +142,6 @@ img.lazy-loaded {
 
   section {
     margin-top: 6rem;
-    padding: 0 1.5rem;
-  }
-  
-  .btn {
-    padding: 0.8rem 1.4rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  section {
-    margin-top: 5rem;
-    padding: 0 1rem;
-  }
-  
-  section > h2 {
-    margin-bottom: 2rem;
-  }
-  
-  .btn {
-    padding: 0.75rem 1.2rem;
-    min-height: 48px; /* Larger touch target on mobile */
   }
 }
 
@@ -336,222 +151,6 @@ img.lazy-loaded {
   }
 
   section > h2 {
-    margin: 4rem 0 2rem;
-  }
-  
-  section {
-    margin-top: 4rem;
-  }
-}
-
-/* ================ Additional Styles to Add to index.css ================ */
-
-/* Error Boundary Styles */
-.error-fallback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  padding: 2rem;
-  text-align: center;
-}
-
-.error-content {
-  background: var(--color-bg-variant);
-  padding: 3rem;
-  border-radius: 1rem;
-  border: 1px solid var(--color-primary);
-  max-width: 500px;
-  width: 100%;
-}
-
-.error-content h2 {
-  color: #ff6b6b;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.error-content p {
-  color: var(--color-light);
-  margin-bottom: 2rem;
-}
-
-.error-details {
-  background: var(--color-bg);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  text-align: left;
-}
-
-.error-details summary {
-  cursor: pointer;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.error-details pre {
-  font-size: 0.8rem;
-  color: var(--color-light);
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.error-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Loading Fallback Styles */
-.loading-fallback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  padding: 2rem;
-}
-
-.loading-content {
-  text-align: center;
-  color: var(--color-light);
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid var(--color-bg-variant);
-  border-top: 3px solid var(--color-primary);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 1rem;
-}
-
-.loading-content p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* Enhanced Floating Chat Assistant */
-.floating-chat {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, var(--color-primary), #8A7CA8);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-  font-weight: bold;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: var(--transition);
-  border: 2px solid transparent;
-  backdrop-filter: blur(10px);
-}
-
-.floating-chat:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.floating-chat:active {
-  transform: translateY(-1px);
-}
-
-.chat-icon {
-  font-size: 1.2rem;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-.chat-text {
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
-/* Responsive floating chat */
-@media screen and (max-width: 768px) {
-  .floating-chat {
-    bottom: 15px;
-    right: 15px;
-    padding: 10px 16px;
-    border-radius: 25px;
-  }
-  
-  .chat-icon {
-    font-size: 1.1rem;
-  }
-  
-  .chat-text {
-    font-size: 0.85rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .floating-chat {
-    bottom: 10px;
-    right: 10px;
-    padding: 8px 12px;
-    border-radius: 20px;
-  }
-  
-  .chat-text {
-    display: none; /* Show only icon on very small screens */
-  }
-  
-  .chat-icon {
-    font-size: 1.3rem;
-  }
-}
-
-/* Hacker theme floating chat */
-body.hacker .floating-chat {
-  background: linear-gradient(135deg, #00ff88, #00cc6a);
-  color: #0d0d0d;
-  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
-}
-
-body.hacker .floating-chat:hover {
-  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.5);
-  border-color: rgba(0, 255, 136, 0.3);
-}
-
-/* Focus states for accessibility */
-.floating-chat:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .loading-spinner,
-  .chat-icon {
-    animation: none;
-  }
-  
-  .floating-chat:hover {
-    transform: none;
-  }
-}
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-  .floating-chat {
-    border: 2px solid white;
-  }
-  
-  .error-content {
-    border: 2px solid var(--color-primary);
+    margin: 6rem 0 2rem;
   }
 }

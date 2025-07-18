@@ -20,7 +20,7 @@ const Experience = () => {
         {/* === LANGUAGES === */}
         <div className="experience__frontend">
           <h3>Languages</h3>
-          <div className="experience__content experience__content--grid">
+          <div className="experience__content">
             {[
               { skill: 'Python', level: 'Intermediate' },
               { skill: 'SQL', level: 'Intermediate' },
@@ -45,17 +45,17 @@ const Experience = () => {
         {/* === CYBERSECURITY TOOLS === */}
         <div className="experience__backend">
           <h3>Cybersecurity Tools & Platforms</h3>
-          <div className="experience__content experience__content--grid">
+          <div className="experience__content">
             {[
-              { skill: 'Splunk/QRadar', level: 'Intermediate' },
+              { skill: 'Splunk', level: 'Intermediate' },
               { skill: 'Wireshark', level: 'Experienced' },
-              { skill: 'Nmap/OpenVAS', level: 'Experienced' },
+              { skill: 'Nmap', level: 'Experienced' },
               { skill: 'Metasploit', level: 'Intermediate' },
               { skill: 'Burp Suite', level: 'Intermediate' },
               { skill: 'Docker', level: 'Basic' },
-              { skill: 'SIEM Platforms', level: 'Intermediate' },
+              { skill: 'SIEM', level: 'Intermediate' },
               { skill: 'AWS/GCP', level: 'Intermediate' },
-              { skill: 'Git/GitHub', level: 'Intermediate' },
+              { skill: 'Git/Github', level: 'Intermediate' },
               { skill: 'Jira', level: 'Intermediate' },
             ].map(({ skill, level }) => (
               <article className="experience__details" key={skill}>
@@ -72,16 +72,17 @@ const Experience = () => {
         {/* === SECURITY SKILLS === */}
         <div className="experience__frontend">
           <h3>Security Skills</h3>
-          <div className="experience__content experience__content--grid">
+          <div className="experience__content">
             {[
-              { skill: 'Identity & Access Management (IAM)', level: 'Intermediate' },
+              { skill: 'Identity and Access Management (IAM)', level: 'Intermediate' },
               { skill: 'Threat Detection & Incident Response', level: 'Intermediate' },
               { skill: 'Penetration Testing & Vulnerability Assessment', level: 'Intermediate' },
               { skill: 'Network Security & Forensics', level: 'Intermediate' },
               { skill: 'Scanning & Reconnaissance', level: 'Intermediate' },
-              { skill: 'Risk Management & Compliance', level: 'Intermediate' },
+              { skill: 'Risk Management ', level: 'Intermediate' },
               { skill: 'Offensive Security', level: 'Intermediate' },
-              { skill: 'Open Source Intelligence (OSINT)', level: 'Intermediate' },
+              { skill: 'Open Source Intelligence', level: 'Intermediate' },
+              { skill: 'Incident Response', level: 'Intermediate' },
             ].map(({ skill, level }) => (
               <article className="experience__details" key={skill}>
                 <BsPatchCheckFill className="experience__details-icon" />
@@ -97,15 +98,18 @@ const Experience = () => {
         {/* === DEVELOPER SKILLS === */}
         <div className="experience__backend">
           <h3>Developer Skills</h3>
-          <div className="experience__content experience__content--grid">
+          <div className="experience__content">
             {[
-              { skill: 'React.js/JavaScript', level: 'Intermediate' },
-              { skill: 'Node.js/REST APIs', level: 'Intermediate' },
-              { skill: 'Python/SQL', level: 'Intermediate' },
-              { skill: 'Firebase/Netlify', level: 'Basic' },
+              { skill: 'React.js', level: 'Intermediate' },
+              { skill: 'Node.js', level: 'Basic' },
+              { skill: 'REST APIs', level: 'Intermediate' },
+              { skill: 'Firebase / Netlify', level: 'Basic' },
               { skill: 'Responsive Design', level: 'Intermediate' },
               { skill: 'Git Workflow', level: 'Intermediate' },
-              { skill: 'LangChain/RAG', level: 'Intermediate' },
+              { skill: 'Agile / Scrum', level: 'Intermediate' },
+              { skill: 'LangChain / RAG', level: 'Intermediate' },
+              { skill: 'Voice Cloning (TTS)', level: 'Intermediate' },
+              { skill: 'TIBCO Spotfire', level: 'Intermediate' },
               { skill: 'Google Cloud (GCP)', level: 'Intermediate' }
             ].map(({ skill, level }) => (
               <article className="experience__details" key={skill}>
@@ -128,18 +132,26 @@ const Experience = () => {
         <div className="experience__container">
           {[
             {
-              title: 'Cybersecurity Intern',
-              company: 'Excelerate',
-              date: 'May 2023 – Jul 2023',
+              title: ' Software Engineer Intern – Renault Nissan Technology & Business Centre',
+              date: 'Jul 2022 – Jun 2023',
               points: [
-                'Investigated and triaged security events using Splunk and QRadar, improving threat detection and response time.',
-                'Built and tuned detection rules, correlation queries, and dashboards to monitor brute force and unauthorized access.',
-                'Onboarded and enriched log data from various sources, enhancing SIEM visibility and forensic traceability.'
+                'Developed production-level features across 3 major projects using Python and JavaScript.',
+                'Monitored SIEM traffic with Splunk, QRadar, and Suricata; improved detection workflows.',
+                'Reduced vulnerabilities by 25% through CVE-based patching and OpenVAS scanning',
+                'Supported ISO 27001/NIST compliance during internal cloud security audits.'
               ]
             },
             {
-              title: 'Cybersecurity Analyst Intern',
-              company: 'TCS Forage',
+              title: 'Cyber Security Intern – Excelerate',
+              date: 'May 2023 – Jul 2023',
+              points: [
+                'Investigated phishing and scanned networks with OpenVAS & Nmap.',
+                'Monitored logs in Splunk and Wireshark.',
+                'Automated incident reporting with Python.'
+              ]
+            },
+            {
+              title: 'Cybers security Analyst Intern – TCS Forage',
               date: 'Jul 2024 – Aug 2024',
               points: [
                 'Built Splunk dashboards simulating threat response.',
@@ -148,41 +160,16 @@ const Experience = () => {
               ]
             },
             {
-              title: 'Software Engineer Intern (Data Security Analyst)',
-              company: 'Renault Nissan Technology Business Centre India',
-              date: 'July 2022 – June 2023',
-              points: [
-                'Maintained 100% accuracy in secure data extraction through SQL optimization and variance analysis.',
-                'Implemented data protection protocols during GCP migrations for sensitive automotive data.',
-                'Reduced data processing vulnerabilities by 25% using Tibco Spotfire and Python governance frameworks.',
-                'Collaborated with European clients (Italy, France) ensuring regional data protection compliance.'
-              ]
-            },
-            {
-              title: 'Technical Support Assistant',
-              company: 'S4 INTERIORS & ARCHITECTS',
-              date: 'Jul 2021 – June 2022',
-              points: [
-                'Configured TCP/IP networks, Active Directory, and managed Windows domain environments across offices.',
-                'Delivered Tier 1-2 support to 15+ users, implementing MFA and endpoint protection.',
-                'Administered Google Workspace with secure file-sharing policies for confidential architectural data.',
-                'Managed complete device lifecycle and maintained compliance through asset tracking audits.'
-              ]
-            },
-            {
-              title: 'IT Security Analyst',
-              company: 'Gurugram Cyber Cell',
+              title: 'Cyber Forensics Intern – Gurugram Cyber Cell',
               date: 'Jun 2021 – Jul 2021',
               points: [
-                'Monitored network performance and implemented Veeam backup procedures for data integrity.',
-                'Developed IT security policies and documented incidents to strengthen security posture.',
-                'Implemented RBAC for virtualization environments and user account management.',
-                'Automated administrative tasks using scripting to enhance system performance efficiency.'
+                'Investigated cybercrime using Autopsy and Wireshark.',
+                'Automated log analysis with Python.',
+                'Reduced investigation turnaround by 15%.'
               ]
             },
             {
-              title: 'Cybersecurity Engineer Intern',
-              company: 'Virtual Testing Foundation',
+              title: 'Cybersecurity Engineer Intern – Virtual Testing Foundation',
               date: 'Jan 2021 – May 2021',
               points: [
                 'Collaborated on cloud feature development and bug fixes.',
@@ -193,7 +180,6 @@ const Experience = () => {
             },
             {
               title: 'Freelance Full Stack Developer',
-              company: 'Self-Employed',
               date: 'Ongoing',
               points: [
                 'Delivered 10+ websites and portfolios for happy clients.',
@@ -202,8 +188,7 @@ const Experience = () => {
               ]
             },
             {
-              title: 'Open Source Contributor',
-              company: 'GSSoC (GirlScript)',
+              title: 'Open Source Contributor – GSSoC (GirlScript)',
               date: 'Mar 2021 – Jun 2021',
               points: [
                 'Contributed to web dev and automation projects on GitHub.',
@@ -211,10 +196,9 @@ const Experience = () => {
                 'Strengthened skills in HTML, JS, React, Git, REST APIs.'
               ]
             }
-          ].map(({ title, company, date, points }, i) => (
+          ].map(({ title, date, points }, i) => (
             <div className="experience__backend" key={i}>
               <h3>{title}</h3>
-              {company && <h4 className="company-name">{company}</h4>}
               <small>{date}</small>
               <div className="experience__content">
                 {points.map((pt, idx) => (

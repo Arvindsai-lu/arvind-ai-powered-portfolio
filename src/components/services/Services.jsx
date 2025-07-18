@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './services.css';
-import { BsCheckLg, BsTrophy, BsAward, BsCertification } from 'react-icons/bs';
+import { BsCheckLg, BsTrophy, BsAward } from 'react-icons/bs';
 import { BiCode, BiShield, BiGlobe } from 'react-icons/bi';
+import { TbCertificate } from 'react-icons/tb'; // Using TbCertificate instead
 
 import replyImg from '../../assets/Achivements/reply.png';
 import cyberquestImg from '../../assets/Achivements/cyberquest.png';
@@ -145,7 +146,7 @@ const Services = () => {
       case 'security': return <BiShield className="cert-icon security" />;
       case 'cloud': return <BiGlobe className="cert-icon cloud" />;
       case 'networking': return <BiCode className="cert-icon networking" />;
-      case 'compliance': return <BsCertification className="cert-icon compliance" />;
+              case 'compliance': return <TbCertificate className="cert-icon compliance" />;
       default: return <BsAward className="cert-icon default" />;
     }
   };
@@ -159,7 +160,7 @@ const Services = () => {
         {/* === Certifications === */}
         <article className="service">
           <div className="service__head">
-            <h3><BsCertification /> Professional Certifications</h3>
+            <h3><TbCertificate /> Professional Certifications</h3>
           </div>
           <div className="cert__columns">
             <ul className="service__list">
